@@ -1,0 +1,1 @@
+# scout7-webapi-core
