@@ -1,0 +1,65 @@
+﻿@using Scout7Client.Models
+@model IndexViewModel
+
+<table class="table" id="playerTable">
+    <tr>
+        <th><span>@Html.DisplayNameFor(x => x.Players.First().Guid)</span></th>
+        <th><span>@Html.DisplayNameFor(x => x.Players.First().isActive)</span></th>
+        <th><span>@Html.DisplayNameFor(x => x.Players.First().Picture)</span></th>
+        <th><span>@Html.DisplayNameFor(x => x.Players.First().Age)</span></th>
+        <th><span>@Html.DisplayNameFor(x => x.Players.First().YellowCards)</span></th>
+        <th><span>@Html.DisplayNameFor(x => x.Players.First().RedCards)</span></th>
+        <th><span>@Html.DisplayNameFor(x => x.Players.First().Goals)</span></th>
+        <th><span>@Html.DisplayNameFor(x => x.Players.First().Appearances)</span></th>
+        <th><span>@Html.DisplayNameFor(x => x.Players.First().Name)</span></th>
+        <th><span>@Html.DisplayNameFor(x => x.Players.First().Gender)</span></th>
+        <th><span>@Html.DisplayNameFor(x => x.Players.First().Team)@Html.DisplayNameFor(x => x.Players.First().Team.Id)</span></th>
+        <th><span>@Html.DisplayNameFor(x => x.Players.First().Team) @Html.DisplayNameFor(x => x.Players.First().Team.Name)</span></th>
+       </tr>
+    
+    @foreach (Players u in Model.Players)
+    {
+    <tr>
+        <td>@u.Guid</td>
+        <td>@u.isActive</td>
+        <td>@u.Picture</td>
+        <td>@u.Age</td>
+        <td>@u.YellowCards</td>
+        <td>@u.RedCards</td>
+        <td>@u.Goals</td>
+        <td>@u.Appearances</td>
+        <td>@u.Name</td>
+        <td>@u.Gender</td>
+        <td>@u.Team.Id</td>
+        <td>@u.Team.Name</td>
+
+    </tr>
+    }
+</table>
+
+@if (Model.PageViewModel.HasPreviousPage)
+{
+    <a asp-action="Index"
+               asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+               class="btn btn-default btn">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        Previous
+    </a>
+}
+@if (Model.PageViewModel.HasNextPage)
+{
+    <a asp-action="Index"
+               asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+               class="btn btn-default btn">
+        Next
+        <i class="glyphicon glyphicon-chevron-right"></i>
+    </a>
+}
+
+
+<script>
+        document.querySelectorAll('th')
+        .forEach((th, i) => {
+            th.insertAdjacentHTML('beforeend', ' <i class="sortData" onclick="sortTable('+ i +')"></i><input type="text" id="filterInput_' + i + '" onkeyup=filterData(' + i + ') />');
+        });
+</script>

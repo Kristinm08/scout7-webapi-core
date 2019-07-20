@@ -1,0 +1,35 @@
+{
+  
+  {
+    "guid": "84528e81-d91c-4b1b-b6fe-9b1b6f53b163",
+    "isActive": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 24,
+    "yellowCards": 10,
+    "redCards": 1,
+    "goals": 16,
+    "appearances": 20,
+    "name": "York Sandoval",
+    "gender": "male",
+    "team": {
+      "id": 3,
+      "name": "Birmingham City"
+    }
+  },
+  {
+    "guid": "84528e81-d91c-4b1b-b6fe-9b1b6f53b163",
+    "isActive": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 24,
+    "yellowCards": 10,
+    "redCards": 1,
+    "goals": 16,
+    "appearances": 20,
+    "name": "York Sandoval",
+    "gender": "male",
+    "team": {
+      "id": 3,
+      "name": "Birmingham City"
+    }
+  }
+}
